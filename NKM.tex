@@ -1,0 +1,127 @@
+%! TEX program = pdftex
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[croatian, english]{babel}
+\usepackage{braket}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{amsmath}
+\usepackage{microtype}      % microtypography
+\usepackage{geometry}
+\usepackage{subfigure}
+%\usepackage{showframe}%
+
+\newgeometry{vmargin={20mm}, hmargin={15mm,15mm}}   % set the margins
+\renewcommand{\figurename}{Slika}
+   \newtheorem{theorem}{Teorem}
+\numberwithin{equation}{section}
+
+\renewcommand*\contentsname{Sadržaj}
+
+\title{Skripta: Napredna Kvantna Mehanika}
+
+
+\author{Adrian Udovičić}
+
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\section*{\centering Uvod}
+
+Svrha ove skripte je upoznati studente različitih smjerova s kolegijem napredne kvantne mehanike.
+
+\vfill
+
+\begin{center}
+\tableofcontents
+\end{center}
+\vfill
+\newpage
+%% početak prvog poglavlja
+\pagenumbering{arabic}
+
+\section{Ket i Bra notacija}
+\subsection{Vektori baze i matrična reprezentacija}
+Kvantno stanje opisujemo sa $\ket{\psi}$ koji razapinju Hilbertov prostor s definiranim skalarnim produktom i svojstvima:
+\begin{itemize}
+	\item $\ket{\alpha} + \ket{\beta} = \bra{\gamma}$,
+	\item c $\cdot \ket{\alpha} = \ket{c \cdot \alpha}$,
+	\item Postoji operator $\hat{A}$ t.d. $\ket{\beta}$.
+\end{itemize}
+Dimenzija prostora određenja je problemom, npr. za 1 elektron imamo dimenzije momenta,
+angularnong momenta i spina $\rightarrow$ 3 + 3 + 2 = 8D. Baza  $\left\{\ket{\alpha}\right\}$, gdje ket $\ket{\alpha}$ sadrži sve informacije o sistemu, ali do informacije dolazimo skalarni produkt:
+$\bra{\beta}\ket{\alpha}$, gdje je $\bra{\beta}$ iz dualnog prostora ket prostora.
+Korespondencija: 
+\begin{equation}
+	C_1\ket{\alpha} + C_2 \ket{\beta} \Leftrightarrow C_1^*\bra{\alpha} C_2^*\bra{\beta}
+\end{equation}
+Svojstva skalarnog produkta:
+\begin{itemize}
+	\item  $\bra{\beta}\ket{\alpha} = \bra{\alpha}\ket{\beta}^*$,
+	\item Pozitivna definitnost $\Rightarrow$ $\bra{\alpha}\ket{\alpha} > 0$,
+	\item Ortogonalnost $\Rightarrow$ $\bra{\alpha}\ket{\beta} = 0 =\bra{\beta}\ket{\alpha}$,
+	\item Normalizacija $\Rightarrow$ $\ket{\hat{\alpha}} = \frac{\ket{\alpha}}{\sqrt{\bra{\alpha}\ket{\alpha}}} \Rightarrow \braket{\alpha \alpha} = 1$. 
+\end{itemize}
+Svaki vektor možemo razviti po vektorima baze:
+\begin{equation}
+\ket{\alpha} = \sum_{n=1}^{N}c_n\ket{\alpha}; c_n = \braket{\alpha_n|\alpha}
+\end{equation}
+
+\subsubsection{Operatori}
+Operatori predstavljaju observable, tj. pomoću operatora pridružujemo fizikalne veličine opažanom sustavu. Npr. Operator položaja $\hat{x}$
+koristi se za određivanje položaja sustav, operator momenta $\hat{p}$ za određivanje momenta, itd.
+Dijelovanje operatora na neko stanje može promijeniti to stanje:
+\begin{equation}
+	\hat{A}\ket{\alpha} = \ket{\beta}
+\end{equation}
+tj.
+\begin{equation}
+\hat{A}\ket{\alpha} = a \ket{a},
+\end{equation}
+gdje je $\ket{a}$ svojstveni vektor (svj. v.) operatora $\hat{A}$, a $a$ svojstvena vrijednost (svj. vrij.).\\
+
+Svojstva operatora:
+\begin{itemize}
+	\item Zbrajanje
+	\begin{itemize}
+	\item Komutativnost: $\hat{A} + \hat{B} = \hat{B} + \hat{A}$,
+	\item Asocijativnost: $\hat{A} + \left(\hat{B} + \hat{C}\right) = \left(\hat{A} + \hat{B} \right) \hat{C}$,
+	\item Linearnost: $\hat{A}\left(a\ket{a}+b\ket{b}\right) = a\hat{A}\ket{a} + b\hat{A}\ket{b}$,
+	\item Hermetičnost: $\hat{A}\ket{a} = \bra{a}\hat{A}^*$
+	\end{itemize}
+\item Množenje
+	\begin{itemize}
+		\item Komutativnost: $\hat{A}\hat{B} \ne \hat{B} \hat{A}$,
+		\item 
+	\end{itemize}
+
+\end{itemize}
+
+
+\subsection{Mjerenja, opservable i relacija neodređenosti}
+
+\subsection{Promjena baze}
+
+\subsection{Položaj, moment i translacija}
+
+\subsection{Valna funkcija u prostoru položaja i momenta}
+
+
+
+
+\section{Kvantna dinamika}
+
+\section{Teorija angularnog momenta}
+
+\section{Simetrije Kvantne mehanike}
+
+\section{Aproksimacijske metode}
+
+\section{Teorija raspršenja}
+\end{document}
