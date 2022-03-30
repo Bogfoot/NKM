@@ -19,20 +19,20 @@
 
 \newgeometry{vmargin={20mm}, hmargin={15mm,15mm}}   % set the margins
 \renewcommand{\figurename}{Slika}
-\newtheorem{theorem}{Teorem}
+\newtheorem{theorem}{Teorem}[section]
 \numberwithin{equation}{section}
 
-\newenvironment{thm}[1]
-    {\begin{center}
-    #1\\[1ex]
-    \begin{tabular}{|p{0.9\textwidth}|}
-    \hline\\
-    }
-    { 
-    \\\\\hline
-    \end{tabular} 
-    \end{center}
-    }
+% \newenvironment{thm}[1]
+%     {\begin{center}
+%     #1\\[1ex]
+%     \begin{tabular}{|p{0.9\textwidth}|}
+%     \hline\\
+%     }
+%     { 
+%     \\\\\hline
+%     \end{tabular} 
+%     \end{center}
+%     }
 
 
 \renewcommand*\contentsname{Sadržaj}
@@ -136,9 +136,9 @@ je operator sa sljedećim svojstvima:
 \end{itemize}
 \subsubsection{Hermitski operatori}
  $\hat{A} = \hat{A}^{\dagger}$ je jednadžba hermetičnosti. Ako jednakost vrijedi operator $\hat{A}$ je hermetičan.
- \begin{thm}{Teorem}
+ \begin{theorem}
 	 Svojstvene vrijednosti hermitskog operatora su realne, a vektori su međusobno ortogonalni.
- \end{thm}
+ \end{theorem}
 
 
 
