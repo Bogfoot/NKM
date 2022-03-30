@@ -19,11 +19,24 @@
 
 \newgeometry{vmargin={20mm}, hmargin={15mm,15mm}}   % set the margins
 \renewcommand{\figurename}{Slika}
-   \newtheorem{theorem}{Teorem}
+\newtheorem{theorem}{Teorem}
 \numberwithin{equation}{section}
 
-\renewcommand*\contentsname{Sadržaj}
+\newenvironment{thm}[1]
+    {\begin{center}
+    #1\\[1ex]
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
 
+
+\renewcommand*\contentsname{Sadržaj}
+ 
 \title{Skripta: Napredna Kvantna Mehanika}
 
 
@@ -97,11 +110,36 @@ Svojstva operatora:
 	\end{itemize}
 \item Množenje
 	\begin{itemize}
-		\item Komutativnost: $\hat{A}\hat{B} \ne \hat{B} \hat{A}$,
-		\item 
+		\item (Anti-)Komutativnost: $\hat{A}\hat{B} \ne \hat{B} \hat{A}$,
+		\item Asocijativnost: $\hat{A}\left(\hat{B}\hat{C}\right) = \left(\hat{A}\hat{B}\right)\hat{C}$,\\
+			tj. $\hat{A}\left(\hat{B}\ket{a}\right)=\hat{A}\hat{B}\ket{a}$,
+		\item Hermetičnost: $\left(\hat{A}\hat{B}\right)^{\dagger} = \hat{B}^{\dagger}\hat{A}^{\dagger}$,\\
+			tj. $\hat{A}\hat{B} \ket{a} = \bra{a} \hat{B}^{\dagger} \hat{A}^{\dagger}$.
 	\end{itemize}
 
 \end{itemize}
+\subsubsection{Komutatori}
+\begin{equation}
+	\left[\hat{A},\hat{B}\right] = \hat{A} \hat{B} - \hat{B}\hat{A}
+\end{equation}
+U klasičnoj mehanici to s ubili generatori koordinata i impulsa. Glavna značajka prelaska iz klasične u kvantnu mehaniku je $\left[p,q\right]\ne0=i\hbar$.
+\subsubsection{Vanjski produkt}
+\begin{equation}
+	\ket{\beta}\bra{\alpha}
+\end{equation}
+je operator sa sljedećim svojstvima:
+\begin{itemize}
+	\item $\left(\ket{\beta}\bra{\alpha}\right)\ket{\gamma} = \ket{\beta}\braket{\alpha|\gamma} = c_{\alpha\gamma}\ket{\beta}$,
+	\item $\hat{X} = \ket{\beta}\bra{\alpha} \rightarrow \hat{X}^{\dagger} = \ket{\alpha}\bra{\beta}$,
+	\item $\left(\bra{\beta}\right)\hat{X}\ket{\alpha} = \braket{\beta|\hat{X}|\alpha} = \left(\braket{\alpha|\hat{X}^{\dagger}|\beta}\right)^{\dagger}$,
+	\item $\braket{\beta|\hat{X}|\alpha} = \braket{\alpha|\hat{X}|\beta}^{\dagger}$.
+\end{itemize}
+\subsubsection{Hermitski operatori}
+ $\hat{A} = \hat{A}^{\dagger}$ je jednadžba hermetičnosti. Ako jednakost vrijedi operator $\hat{A}$ je hermetičan.
+ \begin{thm}{Teorem}
+	 Svojstvene vrijednosti hermitskog operatora su realne, a vektori su međusobno ortogonalni.
+ \end{thm}
+
 
 
 \subsection{Mjerenja, opservable i relacija neodređenosti}
