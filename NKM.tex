@@ -142,14 +142,50 @@ je operator sa sljedećim svojstvima:
  \end{theorem}
 \begin{proof}
 	\begin{equation}
-		\begin{align}
+		\begin{aligned}
 			\hat{A}\ket{n}=& a_n\ket{n}\\
 			\bra{n}\hat{A}^{\dagger} =& \bra{n}a_n^*\\
-			\braket{n|\hat{A}|m} =& \braket{n|m}a_n^*
-		\end{align}
+			\braket{n|\hat{A}|m} =& \braket{n|m}a_n^*\\
+			\a_m\braket{n|m} =& a_n^* \braket{n|m} \Rightarrow(a_n^*-a_m)\braket{n|m} = 0
+		\end{aligned}
 	\end{equation}
 \end{proof}
+Imamo 2 slučaja: 
+\begin{itemize}
+	\item $n = m$
+	\item $n \ne m$
+\end{itemize}
+Za $n = m  \Rightarrow a_n^* = a_n \Rightarrow \braket{n|m}>0$ (Nisu ortogonalni) t.d.:
+\begin{itemize}
+	\item   $\forall\ket{m} \ne \ket{n} \Rightarrow a_m\ne \a_n \Rightarrow a_n - a_m \ne 0 \Rightarrow \braket{n|m} = 0$
+	\item   $\forall\ket{m} \ne \ket{n} \Rightarrow a_m\ne \a_n \rightarrow$ 
+\end{itemize}
+različite funkcije s istim stanjima\\
+$\righarrow$ Koliko različitih svojstvenih funkcija može imati istu svojstvenu vrijednost?\\
+Za $k \ne \ket{m} \exists k $ istih svojstvenih vrijednosti za k različitih svojstvenih vektora $\Rightarrow$ \underline{k puta degenerirane svojstvene vrijednosti}\\
+$\Rightarrow$ Kako je $a_n - a_m = 0 \Rightarrow \braket{n|m} =$? U prostoru možemo izabrati vektore koji su međusobno ortogonalni (Gram-Schmidtov postupak ortogonalizacije), te time dobivamo
+$\braket{n|m} = \delta_{n,m}$ što je relacija ortonormiranosti.
+Vlastite funkcije (time i vektori) hermitskog operatora čine potpun skup, sve druge vektore možemo napisati kao linearnu kombinaciju pa su to vektori baze $\left\{\ket{n}\right\}$
+\begin{equation}
+	\ket{\alpha} = \sum_n c_n \ket{n} \Rightarrow \braket{m|\alpha} = \sum_n c_n\braket{m|n} = c_m
+	\label{EQPotpunosti} % Ova doli je prava relacija potpunosti
+\end{equation}
 
+\begin{equation}
+	\ket{\alpha} = \sum_n c_n \ket{n} = \ket{n}\braket{n|\alpha} \Rightarrow \sum_n \ket{n}\bra{n} = 1.
+	\label{EQPotpuna}
+\end{equation}
+
+Zadnji dio jednadžbe \ref{EQPotpuna} je relacija potpunosti.\\
+Vjerojatnost:
+\begin{equation}
+	\begin{aligned}
+		\braket{\alpha|\alpha} =& \braket{\alpha|\sum_n|n}\braket{n|\alpha}
+		&= \sub_n \abs{\braket{n|\alpha}}^2 = \sum_n\abs{c_n}^2=1
+	\end{aligned}
+\end{equation}
+Gornji izvod nam govori da ćemo uvjek, npr.naći česticu u nekom stanju. Uvjek ćemo "nešto" izmjeriti $\Rightarrow$ \underline{normalizacija}
+(Jer $\sum_n\abs{c_n}^2 = c_1c_1^* + c_2c_2^*...$).
 
 
 \subsection{Mjerenja, opservable i relacija neodređenosti}
