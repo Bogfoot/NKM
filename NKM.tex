@@ -181,14 +181,104 @@ Vjerojatnost:
 \begin{equation}
 	\begin{aligned}
 		\braket{\alpha|\alpha} =& \braket{\alpha|\sum_n|n}\braket{n|\alpha}
-		&= \sub_n \abs{\braket{n|\alpha}}^2 = \sum_n\abs{c_n}^2=1
+		&= \sum_n \left|\braket{n|\alpha}\right|^2 = \sum_n \left|c_n\right|^2=1
 	\end{aligned}
 \end{equation}
 Gornji izvod nam govori da ćemo uvjek, npr.naći česticu u nekom stanju. Uvjek ćemo "nešto" izmjeriti $\Rightarrow$ \underline{normalizacija}
-(Jer $\sum_n\abs{c_n}^2 = c_1c_1^* + c_2c_2^*...$).
+(Jer $\sum_n\left|c_n\right|^2 = c_1c_1^* + c_2c_2^*...$).
+\subsubsection{Matrična reprezentacija}
+Matrična reprezentacija operatora dana je s:
+\begin{equation}
+	\hat{X} = \sum_m\sum_n \ket{m}\braket{m|\hat{X}|n}\bra{n}
+\end{equation}
+gdje su nam 'm'-ovi redovi, a 'n'-ovi stupci, tj.
+\begin{equation}
+	\hat{X} = 
+\begin{bmatrix}
+	\braket{1|\hat{X}|1} & \braket{1|hat{X}|2} & \braket{1|\hat{X}|N}\\
+	... & ... & ...\\
+	\braket{N|\hat{X}|1}& ...& \braket{N|\hat{X}|N}
+\end{bmatrix}
+\end{equation}
+Ako je $\hat{X}$ hermitski operator ($\hat{X} = \hat{X}^{\dagger}$), onda :
+\begin{equation}
+	\begin{aligned}
+		\braket{m|\hat{X}|n} &= \braket{n|\hat{^{\dagger}|m}}^{\dagger}\\
+		\braket{m|\hat{X}|n} &= \braket{n|\{X}|m^{\dagger}\\
+			\Rightarrow \hat{X_{m,n}} &= \hat{X_{m,n}}^{\dagger}
+	\end{aligned}
+\end{equation}
+Imamo više reprezentacija:
+\begin{itemize}
+	\item ket: $\ket{\alpha} = \sum_n\ket{n}\braket{n|\alpha} =
+				\begin{bmatrix} \braket{1|\alpha}\\ ...\\ \braket{n|\alpha} \end{bmatrix} 
+				= \begin{bmatrix} c_1\\ ...\\ c_n  \end{bmatrix}$,\\
+				gdje je $\braket{n|\alpha} = c_n$,
+	\item bra: $\bra{\alpha} = \sum_n \braket{\alpha|n}\bra{n} = \begin{bmatrix} c_1^* & ... & c_n^* \end{bmatrix}$,
+	\item skalarni produkt: $\braket{\beta|\alpha} = \sum_n \braket{\beta|n}\braket{n|\alpha}=
+				\begin{bmatrix} c_1^* & ... & c_n^* \end{bmatrix} \begin{bmatrix} c_1\\ ...\\ c_n  \end{bmatrix}$.
+\end{itemize}
+\newpage
+\subsection{Mjerenja, tj. opservable i relacija neodređenosti}
+\subsubsection{Mjerenja (opservable)}
+Sustav se prije mjerenja nalazi u tzv. "superpoziciji" stanja (\ref{EQPotpunosti}). Tijekom mjerenja
+sustav pređe iz te neodređene linearne kombinacije stanja u neko od svojih svostvenih stanja.
+Sustav koji se već nalazi u svojstvenom stanju prije mjerenja, ostat će u njemu i tijekom mjerenja\footnote{Treba uzeti u obzir da se sustav ostane u nekom stanju neko konačno vrijeme, ne $\infty$ dugo vremena.}.
+\begin{theorem}
+	Postulat: $\ket{\alpha} \xrightarrow{mjerenje} \ket{\alpha_n}$.
+\end{theorem}
+Opet, vjerojatnost da izmjerimo stanje $\ket{\alpha_n}$ dana je s: 
+\begin{equation}
+	W_n = \left|c_n\right|^2 = \left|\braket{\alpha_n|\alpha}\right|^2$.
+\end{equation}
+Također,
+\begin{equation}
+	\sum_n \left|c_n\right|^2 = \sum_n c_n^*c_n = \sum_n \braket{\alpha_n|\alpha}^*\braket{\alpha_n|\alpha} = \sum_n \braket{\alpha|\alpha_n}\braket{\alpha_n|\alpha}
+	=\sum_n \braket{\alpha|\alpha}= 1
+\end{equation}
+Očekivana vrijednost operatora dana je na sljedeći način:
+\begin{equation}
+	\begin{aligned}
+		\braket{\hat{A}} &= \braket{\alpha|\hat{A}|\alpha}\\
+										 &= \sum_{m,n} \braket{\alpha|\alpha_m}\braket{\alpha_m|\hat{A}|\alpha_n}\braket{\alpha_n|\alpha}\\
+										 &= \sum_{m,n} c_m^*c_n \braket{\alpha_m|\hat{A}|\alpha_n}\\
+										 &= \sum_{m,n} c_m^*c_n a_n \braket{\alpha_m|\alpha_n}\\
+										 &= \sum_{m,n} c_m^*c_n a_n \delta_{m,n}\\
+										 &= \sum_{n} c_n^*c_n a_n\\
+		\braket{\hat{A}} &= \sum_n a_n \left|c_n\right|^2  
+	\end{aligned}
+\end{equation}
+\subsubsection{Kompatibilne i nekompatibilne varijable\footnote{U daljnjem tekstu neću koristiti notaciju 'kapica' za operatore jer mi se ne da.}}
+Pri vršenju mjerenja u kvantoj mehanici bitan je redosljed mjerenja opservabli. Ako kvantno mehaničkom sustavu idemo mjeriti
+položaj te moment, a zatim mjerimo nad istim sustavom (ignorirajući činjenicu da smo upravo promjenili sistem,
+pretpostavljamo da su oba sustava identična) moment te položaj dobit ćemo različite rezultate i takve opservable nazivamo nekompatibilnim,
+tj., nekompatibilnim varijablama.\\
+Kod kompatibilnih varijabli nam redosljed mjerenja nije bitan.
+\paragraph{Kompatibilne varijable} 
+
+\begin{equation}
+	\left[A,B\right] = 0
+\end{equation}
+Ako A i B imaju iste svojstvene vrijdnosti ($\exists$ degeneracija stanja) $\Rightarrow$ kao bazu za operator 
+A možemo koristiti svojstvene vektore operatora B i obratno, tj. B možemo razviti preko svojstvenih vektora operatora A i obratno.
+\begin{theorem}
+	Neka su A i B kompatibilne varijable i neka je A nedegenriran $\Rightarrow$ B je dijagonalan ($\braket{\alpha_m|B|\alpha_n} = \delta_{m,n}$)
+\end{theorem}
+\begin{proof}
+	\begin{equation}
+		\begin{aligned}
+			\braket{\alpha_m|\left[A,B\right]|\alpha_n} &= \braket{\alpha_m|AB-BA|\alpha_m}\\
+																									&=\braket{\alpha_m|AB|\alpha_n} - \braket{\alpha_m|BA|\alpha_n}\\
+																									&= a_m \braket{\alpha_m|B|\alpha_n} - a_n\braket{\alpha_m|B|\alpha_n}\\
+																									&=\left(a_m - a_n \right) \braket{\alpha_m|B|\alpha_n} = 0
+		\end{aligned}
+	\end{equation}
+	U zadnjoj liniji možemo izjednačiti s nulom jer očito ako su A i B kompatibilne varijable, u prvom redu ćemo imati 0 = ...
+	t.d. nam ili zagrada u zadnje redu mora biti 0, ili braket. Pošto vrijedi $a_m \ne a_n$, onda mora vrijediti teorem.
+\end{proof}
 
 
-\subsection{Mjerenja, opservable i relacija neodređenosti}
+\subsubsection{Relacije neodređenosti}
 
 \subsection{Promjena baze}
 
