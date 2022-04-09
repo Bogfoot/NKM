@@ -277,12 +277,48 @@ A možemo koristiti svojstvene vektore operatora B i obratno, tj. B možemo razv
 	U zadnjoj liniji možemo izjednačiti s nulom jer očito ako su A i B kompatibilne varijable, u prvom redu ćemo imati 0 = $\braket{\alpha_m|AB-BA|\alpha_m}$
 	t.d. nam ili zagrada u zadnje redu mora biti 0, ili braket. Pošto vrijedi $a_m \ne a_n$, onda mora vrijediti teorem.
 \end{proof}
-
-
+\newpage
+Razvijemo rezultat gornjeg teorema:
+\begin{equations}
+	\begin{aligned}
+		\braket{\alpha_m|B|\alpha_n} &= \braket{\alpha_n|B|\alpha_n} \delta_{m,n}\\
+		B &= \sum_{m,n} \ket{\alpha_n} \braket{\alpha_n|B|\alpha_m} \bra{\alpha_m} \\
+			&= \sum_n \ket{\alpha_n} B_{n,n} \bra{\alpha_n}\\
+		B \ket{\alpha_n} &= \sum_n \ket{\alpha_m}B_{n,m} \braket{\alpha_m|\alpha_n} \\
+										 &= B_{n,n} \ket{\alpha_n} = b_n\ket{alpha_n}\\
+	\end{aligned}
+\end{equations}
+\\$\Rightarrow \ket{\alpha_n}$ je svojstveni vektor od B. $\Rightarrow$ $\left[A,B\right] \Rightarrow$
+A, B imaju ista svojstvena stanja.\\
+A degen.: $\ket{\alpha} \xrightarrow{A} \ket{a',b'} \xrightarrow{B} \ket{a',b'} \xrightarrow{A} \ket{a', b'}$\\
+Ako mjerimo A pa B s be ne uništavmo informaciju o A.\\
+A deg.: $\ket{\alpha} \xrightarrow{A} \sum_i c_a^{(i)} \ket{a', b'^{(i)}} \xrightarrow{B} \ket{a', b'^{(j)}}\xrightarrow{A} \ket{a'}$\\
+Mjerenje A i B ne interagira.\\
 
 \paragraph{Nekompatibilne varijable}
+\begin{equation}
+	\left[A,B\right] \ne 0
+\end{equation}
+Ne postoji zajednički potpuni skup za A i B, tje nemaju bazu u kojoj bi mogli biti dijagonalni.\\
+$\exists$ stanje $\ket{a, b} t.d.:\\
+\begin{equation}
+\begin{aligned}
+	A\ket{a,b} &= a\ket{a,b}\\
+	B\ket{a,b} &= b\ket{a,b}\\
+	AB \ket{a,b} &= ba\ket{a,b}\\
+	BA \ket{a,b} &= ab\ket{a,b}
+\end{aligned}
+\end{equation}
+\\Oduzimanjem zadnja 2 reda dobivamo:
+\begin{equation}
+	\begin{aligned}
+		AB\ket{a,b} - BA\ket{a,b} &= \left(ba -ab\right) \ket{a,b}\\
+		\left[A,B\right]\ket{a,b} &= \begin{cases} = 0 \text{za } \left[A,B\right] = 0\\ \ne 0 \text{za } \left[A,B\right] \ne 0\end{cases}
+	\end{aligned}
+\end{equation}
 
 \subsubsection{Relacije neodređenosti}
+
 
 \subsection{Promjena baze}
 
