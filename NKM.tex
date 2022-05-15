@@ -1,5 +1,3 @@
-%! TEX program = pdftex
-
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage[croatian]{babel}
@@ -22,21 +20,6 @@
 \newtheorem{theorem}{Teorem}[section]
 \newtheorem{proof}{Dokaz}[section]
 \numberwithin{equation}{section}
-
-% \newenvironment{thm}[1]
-%     {\begin{center}
-%     #1\\[1ex]
-%     \begin{tabular}{|p{0.9\textwidth}|}
-%     \hline\\
-%     }
-%     { 
-%     \\\\\hline
-%     \end{tabular} 
-%     \end{center}
-%     }
-
-
-% \renewcommand*\contentsname{Sadržaj}
  
 \title{Skripta: Napredna Kvantna Mehanika}
 
@@ -53,7 +36,7 @@ Svrha ove skripte je upoznati studente različitih smjerova s kolegijem napredne
 \vfill
 
 \begin{center}
-\tableofcontents
+	\tableofcontents
 \end{center}
 \vfill
 \newpage
@@ -71,7 +54,7 @@ Kvantno stanje opisujemo sa $\ket{\psi}$ koji razapinju Hilbertov prostor s defi
 Dimenzija prostora određenja je problemom, npr. za 1 elektron imamo dimenzije momenta,
 angularnong momenta i spina $\rightarrow$ 3 + 3 + 2 = 8D. Baza  $\left\{\ket{\alpha}\right\}$, gdje ket $\ket{\alpha}$ sadrži sve informacije o sistemu, ali do informacije dolazimo skalarni produkt:
 $\bra{\beta}\ket{\alpha}$, gdje je $\bra{\beta}$ iz dualnog prostora ket prostora.
-Korespondencija: 
+Korespondencija:
 \begin{equation}
 	C_1\ket{\alpha} + C_2 \ket{\beta} \Leftrightarrow C_1^*\bra{\alpha} C_2^*\bra{\beta}
 \end{equation}
@@ -80,11 +63,11 @@ Svojstva skalarnog produkta:
 	\item  $\bra{\beta}\ket{\alpha} = \bra{\alpha}\ket{\beta}^*$,
 	\item Pozitivna definitnost $\Rightarrow$ $\bra{\alpha}\ket{\alpha} > 0$,
 	\item Ortogonalnost $\Rightarrow$ $\bra{\alpha}\ket{\beta} = 0 =\bra{\beta}\ket{\alpha}$,
-	\item Normalizacija $\Rightarrow$ $\ket{\hat{\alpha}} = \frac{\ket{\alpha}}{\sqrt{\bra{\alpha}\ket{\alpha}}} \Rightarrow \braket{\alpha \alpha} = 1$. 
+	\item Normalizacija $\Rightarrow$ $\ket{\hat{\alpha}} = \frac{\ket{\alpha}}{\sqrt{\bra{\alpha}\ket{\alpha}}} \Rightarrow \braket{\alpha \alpha} = 1$.
 \end{itemize}
 Svaki vektor možemo razviti po vektorima baze:
 \begin{equation}
-\ket{\alpha} = \sum_{n=1}^{N}c_n\ket{\alpha}; c_n = \braket{\alpha_n|\alpha}
+	\ket{\alpha} = \sum_{n=1}^{N}c_n\ket{\alpha}; c_n = \braket{\alpha_n|\alpha}
 \end{equation}
 
 \subsubsection{Operatori}
@@ -96,27 +79,27 @@ Dijelovanje operatora na neko stanje može promijeniti to stanje:
 \end{equation}
 tj.
 \begin{equation}
-\hat{A}\ket{\alpha} = a \ket{a},
+	\hat{A}\ket{\alpha} = a \ket{a},
 \end{equation}
 gdje je $\ket{a}$ svojstveni vektor (svj. v.) operatora $\hat{A}$, a $a$ svojstvena vrijednost (svj. vrij.).\\
 
 Svojstva operatora:
 \begin{itemize}
 	\item Zbrajanje
-	\begin{itemize}
-	\item Komutativnost: $\hat{A} + \hat{B} = \hat{B} + \hat{A}$,
-	\item Asocijativnost: $\hat{A} + \left(\hat{B} + \hat{C}\right) = \left(\hat{A} + \hat{B} \right) \hat{C}$,
-	\item Linearnost: $\hat{A}\left(a\ket{a}+b\ket{b}\right) = a\hat{A}\ket{a} + b\hat{A}\ket{b}$,
-	\item Hermetičnost: $\hat{A}\ket{a} = \bra{a}\hat{A}^*$
-	\end{itemize}
-\item Množenje
-	\begin{itemize}
-		\item (Anti-)Komutativnost: $\hat{A}\hat{B} \ne \hat{B} \hat{A}$,
-		\item Asocijativnost: $\hat{A}\left(\hat{B}\hat{C}\right) = \left(\hat{A}\hat{B}\right)\hat{C}$,\\
-			tj. $\hat{A}\left(\hat{B}\ket{a}\right)=\hat{A}\hat{B}\ket{a}$,
-		\item Hermetičnost: $\left(\hat{A}\hat{B}\right)^{\dagger} = \hat{B}^{\dagger}\hat{A}^{\dagger}$,\\
-			tj. $\hat{A}\hat{B} \ket{a} = \bra{a} \hat{B}^{\dagger} \hat{A}^{\dagger}$.
-	\end{itemize}
+	      \begin{itemize}
+		      \item Komutativnost: $\hat{A} + \hat{B} = \hat{B} + \hat{A}$,
+		      \item Asocijativnost: $\hat{A} + \left(\hat{B} + \hat{C}\right) = \left(\hat{A} + \hat{B} \right) \hat{C}$,
+		      \item Linearnost: $\hat{A}\left(a\ket{a}+b\ket{b}\right) = a\hat{A}\ket{a} + b\hat{A}\ket{b}$,
+		      \item Hermetičnost: $\hat{A}\ket{a} = \bra{a}\hat{A}^*$
+	      \end{itemize}
+	\item Množenje
+	      \begin{itemize}
+		      \item (Anti-)Komutativnost: $\hat{A}\hat{B} \ne \hat{B} \hat{A}$,
+		      \item Asocijativnost: $\hat{A}\left(\hat{B}\hat{C}\right) = \left(\hat{A}\hat{B}\right)\hat{C}$,\\
+		            tj. $\hat{A}\left(\hat{B}\ket{a}\right)=\hat{A}\hat{B}\ket{a}$,
+		      \item Hermetičnost: $\left(\hat{A}\hat{B}\right)^{\dagger} = \hat{B}^{\dagger}\hat{A}^{\dagger}$,\\
+		            tj. $\hat{A}\hat{B} \ket{a} = \bra{a} \hat{B}^{\dagger} \hat{A}^{\dagger}$.
+	      \end{itemize}
 
 \end{itemize}
 \subsubsection{Komutatori}
@@ -136,21 +119,21 @@ je operator sa sljedećim svojstvima:
 	\item $\braket{\beta|\hat{X}|\alpha} = \braket{\alpha|\hat{X}|\beta}^{\dagger}$.
 \end{itemize}
 \subsubsection{Hermitski operatori}
- $\hat{A} = \hat{A}^{\dagger}$ je jednadžba hermetičnosti. Ako jednakost vrijedi operator $\hat{A}$ je hermetičan.
- \begin{theorem}
-	 Svojstvene vrijednosti hermitskog operatora su realne, a vektori su međusobno ortogonalni.
- \end{theorem}
+$\hat{A} = \hat{A}^{\dagger}$ je jednadžba hermetičnosti. Ako jednakost vrijedi operator $\hat{A}$ je hermetičan.
+\begin{theorem}
+	Svojstvene vrijednosti hermitskog operatora su realne, a vektori su međusobno ortogonalni.
+\end{theorem}
 \begin{proof}
 	\begin{equation}
 		\begin{aligned}
-			\hat{A}\ket{n}=& a_n\ket{n}\\
-			\bra{n}\hat{A}^{\dagger} =& \bra{n}a_n^*\\
-			\braket{n|\hat{A}|m} =& \braket{n|m}a_n^*\\
-			\a_m\braket{n|m} =& a_n^* \braket{n|m} \Rightarrow(a_n^*-a_m)\braket{n|m} = 0
+			\hat{A}\ket{n}=            & a_n\ket{n}                                                \\
+			\bra{n}\hat{A}^{\dagger} = & \bra{n}a_n^*                                              \\
+			\braket{n|\hat{A}|m} =     & \braket{n|m}a_n^*                                         \\
+			\a_m\braket{n|m} =         & a_n^* \braket{n|m} \Rightarrow(a_n^*-a_m)\braket{n|m} = 0
 		\end{aligned}
 	\end{equation}
 \end{proof}
-Imamo 2 slučaja: 
+Imamo 2 slučaja:
 \begin{itemize}
 	\item $n = m$
 	\item $n \ne m$
@@ -158,7 +141,7 @@ Imamo 2 slučaja:
 Za $n = m  \Rightarrow a_n^* = a_n \Rightarrow \braket{n|m}>0$ (Nisu ortogonalni) t.d.:
 \begin{itemize}
 	\item   $\forall\ket{m} \ne \ket{n} \Rightarrow a_m\ne \a_n \Rightarrow a_n - a_m \ne 0 \Rightarrow \braket{n|m} = 0$
-	\item   $\forall\ket{m} \ne \ket{n} \Rightarrow a_m\ne \a_n \rightarrow$ 
+	\item   $\forall\ket{m} \ne \ket{n} \Rightarrow a_m\ne \a_n \rightarrow$
 \end{itemize}
 različite funkcije s istim stanjima\\
 $\righarrow$ Koliko različitih svojstvenih funkcija može imati istu svojstvenu vrijednost?\\
@@ -180,8 +163,8 @@ Zadnji dio jednadžbe \ref{EQPotpuna} je relacija potpunosti.\\
 Vjerojatnost:
 \begin{equation}
 	\begin{aligned}
-		\braket{\alpha|\alpha} =& \braket{\alpha|\sum_n|n}\braket{n|\alpha}
-		&= \sum_n \left|\braket{n|\alpha}\right|^2 = \sum_n \left|c_n\right|^2=1
+		\braket{\alpha|\alpha} = & \braket{\alpha|\sum_n|n}\braket{n|\alpha}
+		                         & = \sum_n \left|\braket{n|\alpha}\right|^2 = \sum_n \left|c_n\right|^2=1
 	\end{aligned}
 \end{equation}
 Gornji izvod nam govori da ćemo uvjek, npr.naći česticu u nekom stanju. Uvjek ćemo "nešto" izmjeriti $\Rightarrow$ \underline{normalizacija}
@@ -193,41 +176,41 @@ Matrična reprezentacija operatora dana je s:
 \end{equation}
 gdje su nam 'm'-ovi redovi, a 'n'-ovi stupci, tj.
 \begin{equation}
-	\hat{X} = 
-\begin{bmatrix}
-	\braket{1|\hat{X}|1} & \braket{1|hat{X}|2} & \braket{1|\hat{X}|N}\\
-	... & ... & ...\\
-	\braket{N|\hat{X}|1}& ...& \braket{N|\hat{X}|N}
-\end{bmatrix}
+	\hat{X} =
+	\begin{bmatrix}
+		\braket{1|\hat{X}|1} & \braket{1|hat{X}|2} & \braket{1|\hat{X}|N} \\
+		...                  & ...                 & ...                  \\
+		\braket{N|\hat{X}|1} & ...                 & \braket{N|\hat{X}|N}
+	\end{bmatrix}
 \end{equation}
 Ako je $\hat{X}$ hermitski operator ($\hat{X} = \hat{X}^{\dagger}$), onda :
 \begin{equation}
 	\begin{aligned}
-		\braket{m|\hat{X}|n} &= \braket{n|\hat{^{\dagger}|m}}^{\dagger}\\
-		\braket{m|\hat{X}|n} &= \braket{n|\{X}|m^{\dagger}\\
-			\Rightarrow \hat{X_{m,n}} &= \hat{X_{m,n}}^{\dagger}
+		\braket{m|\hat{X}|n}      & = \braket{n|\hat{^{\dagger}|m}}^{\dagger} \\
+		\braket{m|\hat{X}|n}      & = \braket{n|\{X}|m^{\dagger}              \\
+		\Rightarrow \hat{X_{m,n}} & = \hat{X_{m,n}}^{\dagger}
 	\end{aligned}
 \end{equation}
 Imamo više reprezentacija\footnote{U smislu da imamo više stvari za "matrično reprezentirati".}:
 \begin{itemize}
 	\item ket: $\ket{\alpha} = \sum_n\ket{n}\braket{n|\alpha} =
-				\begin{bmatrix} \braket{1|\alpha}\\ ...\\ \braket{n|\alpha} \end{bmatrix} 
-				= \begin{bmatrix} c_1\\ ...\\ c_n  \end{bmatrix}$,\\
-				gdje je $\braket{n|\alpha} = c_n$,
+		      \begin{bmatrix} \braket{1|\alpha}\\ ...\\ \braket{n|\alpha} \end{bmatrix}
+		      = \begin{bmatrix} c_1\\ ...\\ c_n  \end{bmatrix}$,\\
+	      gdje je $\braket{n|\alpha} = c_n$,
 	\item bra: $\bra{\alpha} = \sum_n \braket{\alpha|n}\bra{n} = \begin{bmatrix} c_1^* & ... & c_n^* \end{bmatrix}$,
 	\item skalarni produkt: $\braket{\beta|\alpha} = \sum_n \braket{\beta|n}\braket{n|\alpha}=
-				\begin{bmatrix} c_1^* & ... & c_n^* \end{bmatrix} \begin{bmatrix} c_1\\ ...\\ c_n  \end{bmatrix}$.
+		      \begin{bmatrix} c_1^* & ... & c_n^* \end{bmatrix} \begin{bmatrix} c_1\\ ...\\ c_n  \end{bmatrix}$.
 \end{itemize}
 \subsection{Mjerenja, tj. opservable i relacija neodređenosti}
 \subsubsection{Mjerenja (opservable)}
 Sustav se prije mjerenja nalazi u tzv. "superpoziciji" stanja (\ref{EQPotpunosti}). Tijekom mjerenja
 sustav pređe iz te neodređene linearne kombinacije stanja u neko od svojih svostvenih stanja.
 Sustav koji se već nalazi u svojstvenom stanju prije mjerenja, ostat će u njemu i tijekom mjerenja\footnote{Treba uzeti u obzir da sustav ostane
-u nekom stanju neko konačno vrijeme, ne $\infty$ dugo vremena.}.
+	u nekom stanju neko konačno vrijeme, ne $\infty$ dugo vremena.}.
 \begin{theorem}
 	Postulat: $\ket{\alpha} \xrightarrow{mjerenje} \ket{\alpha_n}.$
 \end{theorem}
-Opet, vjerojatnost da izmjerimo stanje $\ket{\alpha_n}$ dana je s: 
+Opet, vjerojatnost da izmjerimo stanje $\ket{\alpha_n}$ dana je s:
 \begin{equation}
 	W_n = \left|c_n\right|^2 = \left|\braket{\alpha_n|\alpha}\right|^2.
 \end{equation}
@@ -239,13 +222,13 @@ Također,
 Očekivana vrijednost operatora dana je na sljedeći način:
 \begin{equation}
 	\begin{aligned}
-		\braket{\hat{A}} &= \braket{\alpha|\hat{A}|\alpha}\\
-										 &= \sum_{m,n} \braket{\alpha|\alpha_m}\braket{\alpha_m|\hat{A}|\alpha_n}\braket{\alpha_n|\alpha}\\
-										 &= \sum_{m,n} c_m^*c_n \braket{\alpha_m|\hat{A}|\alpha_n}\\
-										 &= \sum_{m,n} c_m^*c_n a_n \braket{\alpha_m|\alpha_n}\\
-										 &= \sum_{m,n} c_m^*c_n a_n \delta_{m,n}\\
-										 &= \sum_{n} c_n^*c_n a_n\\
-		\braket{\hat{A}} &= \sum_n a_n \left|c_n\right|^2  
+		\braket{\hat{A}} & = \braket{\alpha|\hat{A}|\alpha}                                                                \\
+		                 & = \sum_{m,n} \braket{\alpha|\alpha_m}\braket{\alpha_m|\hat{A}|\alpha_n}\braket{\alpha_n|\alpha} \\
+		                 & = \sum_{m,n} c_m^*c_n \braket{\alpha_m|\hat{A}|\alpha_n}                                        \\
+		                 & = \sum_{m,n} c_m^*c_n a_n \braket{\alpha_m|\alpha_n}                                            \\
+		                 & = \sum_{m,n} c_m^*c_n a_n \delta_{m,n}                                                          \\
+		                 & = \sum_{n} c_n^*c_n a_n                                                                         \\
+		\braket{\hat{A}} & = \sum_n a_n \left|c_n\right|^2
 	\end{aligned}
 \end{equation}
 
@@ -255,12 +238,12 @@ položaj te moment, a zatim mjerimo nad istim sustavom (ignorirajući činjenicu
 pretpostavljamo da su oba sustava identična) moment te položaj dobit ćemo različite rezultate i takve opservable nazivamo nekompatibilnim,
 tj., nekompatibilnim varijablama.\\
 Kod kompatibilnih varijabli nam redosljed mjerenja nije bitan.
-\paragraph{Kompatibilne varijable} 
+\paragraph{Kompatibilne varijable}
 
 \begin{equation}
 	\left[A,B\right] = 0
 \end{equation}
-Ako A i B imaju iste svojstvene vrijdnosti ($\exists$ degeneracija stanja) $\Rightarrow$ kao bazu za operator 
+Ako A i B imaju iste svojstvene vrijdnosti ($\exists$ degeneracija stanja) $\Rightarrow$ kao bazu za operator
 A možemo koristiti svojstvene vektore operatora B i obratno, tj. B možemo razviti preko svojstvenih vektora operatora A i obratno.
 \begin{theorem}
 	Neka su A i B kompatibilne varijable i neka je A nedegenriran $\Rightarrow$ B je dijagonalan ($\braket{\alpha_m|B|\alpha_n} = \delta_{m,n}$)
@@ -268,10 +251,10 @@ A možemo koristiti svojstvene vektore operatora B i obratno, tj. B možemo razv
 \begin{proof}
 	\begin{equation}
 		\begin{aligned}
-			\braket{\alpha_m|\left[A,B\right]|\alpha_n} &= \braket{\alpha_m|AB-BA|\alpha_m}\\
-																									&=\braket{\alpha_m|AB|\alpha_n} - \braket{\alpha_m|BA|\alpha_n}\\
-																									&= a_m \braket{\alpha_m|B|\alpha_n} - a_n\braket{\alpha_m|B|\alpha_n}\\
-																									&=\left(a_m - a_n \right) \braket{\alpha_m|B|\alpha_n} = 0
+			\braket{\alpha_m|\left[A,B\right]|\alpha_n} & = \braket{\alpha_m|AB-BA|\alpha_m}                                   \\
+			                                            & =\braket{\alpha_m|AB|\alpha_n} - \braket{\alpha_m|BA|\alpha_n}       \\
+			                                            & = a_m \braket{\alpha_m|B|\alpha_n} - a_n\braket{\alpha_m|B|\alpha_n} \\
+			                                            & =\left(a_m - a_n \right) \braket{\alpha_m|B|\alpha_n} = 0
 		\end{aligned}
 	\end{equation}
 	U zadnjoj liniji možemo izjednačiti s nulom jer očito ako su A i B kompatibilne varijable, u prvom redu ćemo imati 0 = $\braket{\alpha_m|AB-BA|\alpha_m}$
@@ -281,39 +264,39 @@ A možemo koristiti svojstvene vektore operatora B i obratno, tj. B možemo razv
 Razvijemo rezultat gornjeg teorema:
 \begin{equations}
 	\begin{aligned}
-		\braket{\alpha_m|B|\alpha_n} &= \braket{\alpha_n|B|\alpha_n} \delta_{m,n}\\
-		B &= \sum_{m,n} \ket{\alpha_n} \braket{\alpha_n|B|\alpha_m} \bra{\alpha_m} \\
-			&= \sum_n \ket{\alpha_n} B_{n,n} \bra{\alpha_n}\\
-		B \ket{\alpha_n} &= \sum_n \ket{\alpha_m}B_{n,m} \braket{\alpha_m|\alpha_n} \\
-										 &= B_{n,n} \ket{\alpha_n} = b_n\ket{alpha_n}\\
+		\braket{\alpha_m|B|\alpha_n} & = \braket{\alpha_n|B|\alpha_n} \delta_{m,n}                             \\
+		B                            & = \sum_{m,n} \ket{\alpha_n} \braket{\alpha_n|B|\alpha_m} \bra{\alpha_m} \\
+		                             & = \sum_n \ket{\alpha_n} B_{n,n} \bra{\alpha_n}                          \\
+		B \ket{\alpha_n}             & = \sum_n \ket{\alpha_m}B_{n,m} \braket{\alpha_m|\alpha_n}               \\
+		                             & = B_{n,n} \ket{\alpha_n} = b_n\ket{alpha_n}                             \\
 	\end{aligned}
 \end{equations}
 \\$\Rightarrow \ket{\alpha_n}$ je svojstveni vektor od B. $\Rightarrow$ $\left[A,B\right] \Rightarrow$
-A, B imaju ista svojstvena stanja.\\
-A degen.: $\ket{\alpha} \xrightarrow{A} \ket{a',b'} \xrightarrow{B} \ket{a',b'} \xrightarrow{A} \ket{a', b'}$\\
-Ako mjerimo A pa B s be ne uništavmo informaciju o A.\\
-A deg.: $\ket{\alpha} \xrightarrow{A} \sum_i c_a^{(i)} \ket{a', b'^{(i)}} \xrightarrow{B} \ket{a', b'^{(j)}}\xrightarrow{A} \ket{a'}$\\
-Mjerenje A i B ne interagira.\\
+	A, B imaju ista svojstvena stanja.\\
+	A degen.: $\ket{\alpha} \xrightarrow{A} \ket{a',b'} \xrightarrow{B} \ket{a',b'} \xrightarrow{A} \ket{a', b'}$\\
+	Ako mjerimo A pa B s be ne uništavmo informaciju o A.\\
+	A deg.: $\ket{\alpha} \xrightarrow{A} \sum_i c_a^{(i)} \ket{a', b'^{(i)}} \xrightarrow{B} \ket{a', b'^{(j)}}\xrightarrow{A} \ket{a'}$\\
+	Mjerenje A i B ne interagira.\\
 
-\paragraph{Nekompatibilne varijable}
-\begin{equation}
-	\left[A,B\right] \ne 0
-\end{equation}
-Ne postoji zajednički potpuni skup za A i B, tje nemaju bazu u kojoj bi mogli biti dijagonalni.\\
+	\paragraph{Nekompatibilne varijable}
+	\begin{equation}
+		\left[A,B\right] \ne 0
+	\end{equation}
+	Ne postoji zajednički potpuni skup za A i B, tje nemaju bazu u kojoj bi mogli biti dijagonalni.\\
 $\exists$ stanje $\ket{a, b} t.d.:\\
 \begin{equation}
-\begin{aligned}
-	A\ket{a,b} &= a\ket{a,b}\\
-	B\ket{a,b} &= b\ket{a,b}\\
-	AB \ket{a,b} &= ba\ket{a,b}\\
-	BA \ket{a,b} &= ab\ket{a,b}
-\end{aligned}
+	\begin{aligned}
+		A\ket{a,b}   & = a\ket{a,b}  \\
+		B\ket{a,b}   & = b\ket{a,b}  \\
+		AB \ket{a,b} & = ba\ket{a,b} \\
+		BA \ket{a,b} & = ab\ket{a,b}
+	\end{aligned}
 \end{equation}
 \\Oduzimanjem zadnja 2 reda dobivamo:
 \begin{equation}
 	\begin{aligned}
-		AB\ket{a,b} - BA\ket{a,b} &= \left(ba -ab\right) \ket{a,b}\\
-		\left[A,B\right]\ket{a,b} &= \begin{cases} = 0 \text{za } \left[A,B\right] = 0\\ \ne 0 \text{za } \left[A,B\right] \ne 0\end{cases}
+		AB\ket{a,b} - BA\ket{a,b} & = \left(ba -ab\right) \ket{a,b}                                                                          \\
+		\left[A,B\right]\ket{a,b} & = \begin{cases} = 0 \text{za } \left[A,B\right] = 0\\ \ne 0 \text{za } \left[A,B\right] \ne 0\end{cases}
 	\end{aligned}
 \end{equation}
 
